@@ -69,23 +69,3 @@ const countries = [
 // Use a li to display the country.
 // Add an img to each country to display the flag of each country.
 // Append each country to the correct part of the DOM (e.g., Germany should be added to the Europe list since it's part of Europe, whereas Japan should be added to Asia)
-
-const asiaList = document.querySelector(".asia");
-const europeList = document.querySelector(".europe");
-
-for (let i = 0; i < countries.length; i++) {
-  const country = countries[i];
-  const countryListItem = document.createElement("li");
-  const countryName = document.createTextNode(
-    `${country.name} (${country.code})`
-  );
-  const countryFlagImage = document.createElement("img");
-  countryFlagImage.setAttribute("src", country.flagImageUrl);
-
-  countryListItem.appendChild(countryName);
-  countryListItem.appendChild(countryFlagImage);
-
-  (country.region === "Asia" ? asiaList : europeList).appendChild(
-    countryListItem
-  );
-}

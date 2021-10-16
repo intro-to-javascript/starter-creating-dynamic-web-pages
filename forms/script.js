@@ -20,16 +20,12 @@
 const signupForm = document.querySelector(".signup-form");
 
 const addressInput = document.querySelector("#address-line-1");
-const topicSelect = document.querySelector("#topic");
 const otherInterestsTextArea = document.querySelector("#other-interests");
-const emailInput = document.querySelector("#email");
 
 const addressError = document.querySelector("#address-line-1 + span.error");
-const topicError = document.querySelector("#topic + span.error");
 const otherInterestsError = document.querySelector(
   "#other-interests + span.error"
 );
-const emailError = document.querySelector("#email + span.error");
 
 /** 
   EVENT HANDLERS
@@ -38,16 +34,9 @@ function handleSignupFormSubmit(event) {
   event.preventDefault();
 
   !addressInput.validity.valid && handleAddressInput();
-  !topicSelect.validity.valid && handleTopicSelectInput();
-  !emailInput.validity.valid && handleEmailInput();
   !otherInterestsTextArea.validity.valid && handleOtherInterestsTextAreaInput();
 
-  if (
-    addressInput.validity.valid &&
-    topicSelect.validity.valid &&
-    otherInterestsTextArea.validity.valid &&
-    emailInput.validity.valid
-  ) {
+  if (addressInput.validity.valid && otherInterestsTextArea.validity.valid) {
     // send form data
   }
 }
@@ -60,13 +49,7 @@ function handleAddressInput() {
     : "";
 }
 
-// Use JavaScript to display an error message "You must select a topic" below to the
-// Topic dropdown menu if the option selected is "Select One"
-function handleTopicSelectInput() {
-  topicError.textContent = topicSelect.validity.valueMissing
-    ? "You must select a topic"
-    : "";
-}
+// EXERCISE 1: Use JavaScript to display an error message "You must select a topic" below to the Topic dropdown menu if the option selected is "Select One"
 
 // Use JavaScript to display an error message below the text area if the content is
 // less than 10 characters long when the user submits the form. Your error message
@@ -103,30 +86,11 @@ function handleOtherInterestsTextAreaInput(event) {
     - If the provided input is too short, display the following error message: "Email should be at least 6 characters but you entered {X} characters."
   - Perform the validation as the user is typing into the input field (meaning you should use the "input" event), as well as, when the user submits the form.
 */
-function handleEmailInput() {
-  const emailValidity = emailInput.validity;
-
-  if (emailValidity.valid) {
-    emailError.textContent = "";
-    emailError.classList.add("error");
-  } else {
-    if (emailValidity.valueMissing) {
-      emailError.textContent = "You need to provide an e-mail address.";
-    } else if (emailValidity.typeMismatch) {
-      emailError.textContent = "Please enter a valid e-mail address.";
-    } else if (emailValidity.tooShort) {
-      emailError.textContent = `Email should be at least ${emailInput.minLength} characters but you entered ${emailInput.value.length}.`;
-    }
-    emailError.classList.add(["error", "active"]);
-  }
-}
 
 /** 
   REGISTER EVENT LISTENERS
 */
 addressInput.addEventListener("input", handleAddressInput);
-emailInput.addEventListener("input", handleEmailInput);
-topicSelect.addEventListener("input", handleTopicSelectInput);
 otherInterestsTextArea.addEventListener(
   "input",
   handleOtherInterestsTextAreaInput

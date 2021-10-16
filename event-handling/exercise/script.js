@@ -4,11 +4,3 @@
 
   https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 */
-
-const container = document.querySelector(".container");
-
-function handleButtonClick(event) {
-  container.style.backgroundColor = event.target.dataset.color;
-}
-
-container.addEventListener("click", handleButtonClick);

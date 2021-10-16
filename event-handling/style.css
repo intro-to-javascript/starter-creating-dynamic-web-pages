@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+/* LIGHT THEME */
+
+html {
+  background-color: #00539f; /* Put each property and value pair on a separate line */
+  font-size: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid #000;
+}
+
+li {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.primary-heading {
+  color: #00539f;
+  font-size: 60px;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  text-shadow: 3px 3px 1px black;
+}
+
+.animal-image {
+  display: block;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* DARK THEME */
+
+.html-dark {
+  background-color: #3a3b3c;
+}
+
+.body-dark {
+  background-color: #000;
+  color: #fff;
+  border-color: grey;
+}
+
+.primary-heading-dark {
+  color: #fff;
+}

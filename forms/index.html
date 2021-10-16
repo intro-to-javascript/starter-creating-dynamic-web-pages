@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Conference Signup Form</h1>
+
+    <form class="signup-form" novalidate>
+      <!-- <form class="signup-form"> -->
+      <fieldset>
+        <legend>Details</legend>
+
+        <div class="signup-form-row">
+          <div>
+            <label for="first-name">First Name:</label>
+            <input
+              id="first-name"
+              type="text"
+              name="first-name"
+              placeholder="First Name"
+              autofocus
+              required
+            />
+          </div>
+          <div>
+            <label for="last-name">Last Name:</label>
+            <input
+              id="last-name"
+              type="text"
+              name="last-name"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="signup-form-row">
+          <label>Phone Number: </label>
+          <input
+            name="tel1"
+            type="tel"
+            pattern="[0-9]{3}"
+            placeholder="###"
+            aria-label="3-digit area code"
+            size="2"
+          />
+          -
+          <input
+            name="tel2"
+            type="tel"
+            pattern="[0-9]{3}"
+            placeholder="###"
+            aria-label="3-digit prefix"
+            size="2"
+          />
+          -
+          <input
+            name="tel3"
+            type="tel"
+            pattern="[0-9]{4}"
+            placeholder="####"
+            aria-label="4-digit number"
+            size="4"
+          />
+        </div>
+
+        <div class="signup-form-row">
+          <div>
+            <label for="email">E-mail address:</label>
+            <input type="email" id="email" name="email" />
+          </div>
+        </div>
+
+        <div class="signup-form-row">
+          <label for="address">Address</label>
+          <div class="address-fields">
+            <div>
+              <label for="address-line-1">Address Line 1:</label>
+              <input
+                id="address-line-1"
+                type="text"
+                name="address[address_line_1]"
+                placeholder="Address Line 1"
+                required
+              />
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div>
+              <label for="address-line-2">Address Line 2:</label>
+              <input
+                id="address-line-2"
+                type="text"
+                name="address[address_line_2]"
+                placeholder="Address Line 2"
+              />
+            </div>
+            <div>
+              <label for="city">City:</label>
+              <input
+                id="city"
+                type="text"
+                name="address[city]"
+                placeholder="City"
+              />
+            </div>
+            <div>
+              <label for="state">State:</label>
+              <input
+                id="state"
+                type="text"
+                name="address[state]"
+                placeholder="State"
+              />
+            </div>
+            <div>
+              <label for="postal-code">Postal Code:</label>
+              <input
+                id="postal-code"
+                type="text"
+                name="address[postal_code]"
+                placeholder="Postal Code"
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Conference Topic Interests</legend>
+
+        <div class="signup-form-row">
+          <label for="topic">Topic</label>
+          <select name="topic" id="topic">
+            <option value="">Select One</option>
+            <optgroup label="Cryptocurrency">
+              <option value="bitcoin">Bitcoin</option>
+              <option value="ethereum">Ethereum</option>
+              <option value="other">Other</option>
+            </optgroup>
+            <optgroup label="Web Development">
+              <option value="front-end">Front-end</option>
+              <option value="back-end">Back-end</option>
+              <option value="fullstack">Fullstack</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="signup-form-row">
+          <label for="other-interests"
+            >Please describe other topics you're interested in:</label
+          >
+          <textarea
+            name="other-interests"
+            id="other-interests"
+            minlength="10"
+            maxlength="250"
+            required
+          ></textarea>
+          <span class="error" aria-live="polite"></span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Next Steps</legend>
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
